@@ -9,6 +9,7 @@ $(document).ready(function () {
                 },
             grade:
                 {
+                    required: true,
                     min: 5,
                     max: 8,
                     digits: true
@@ -36,7 +37,7 @@ $(document).ready(function () {
     // Needs submitHandler, rules, and messages properties
     $("form").validate(
         {
-            submitHandler: runMyProgram(),
+            submitHandler: runMyProgram,
             rules: myRules,
             messages: myMessages
         }
@@ -50,7 +51,7 @@ $(document).ready(function () {
         var name = $("#firstName").val();
         var grade = $("#grade").val();
 
-        $("#message").text(`${name} ${grade}`);
+        $("#message").text(`You have registered ${name} to ${grade} grade.`);
 
     }
 
